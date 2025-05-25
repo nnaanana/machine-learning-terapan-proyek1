@@ -57,7 +57,7 @@ Distribusi fitur numerik dianalisis untuk mengidentifikasi pola umum. Beberapa t
 - Tingkat pengangguran banyak berada di bawah 6%.
 - Kategori target tidak seimbang: label tidak miskin jauh lebih dominan.
 
-![Gambar1a](https://github.com/user-attachments/assets/ffbec10b-5d08-42f6-8ec7-a08ea895a6a0)
+![Gambar1a](https://github.com/user-attachments/assets/eec97911-baad-456d-8df1-140599f3ff00)
 
 Pada tahap EDA univariate, dilakukan analisis distribusi masing-masing variabel numerik dan target untuk memahami pola sebaran data:
 
