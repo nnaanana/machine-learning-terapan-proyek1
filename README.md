@@ -57,7 +57,7 @@ Distribusi fitur numerik dianalisis untuk mengidentifikasi pola umum. Beberapa t
 - Tingkat pengangguran banyak berada di bawah 6%.
 - Kategori target tidak seimbang: label tidak miskin jauh lebih dominan.
 
-![Gambar1a](https://github.com/user-attachments/assets/eec97911-baad-456d-8df1-140599f3ff00)
+![Gambar1a](https://github.com/user-attachments/assets/6c93dc6e-6e91-436b-8749-827c4b26760e)
 
 Pada tahap EDA univariate, dilakukan analisis distribusi masing-masing variabel numerik dan target untuk memahami pola sebaran data:
 
@@ -73,7 +73,7 @@ Distribusi tingkat pengangguran juga bersifat positif skewed, dengan mayoritas k
 Distribusi target klasifikasi_kemiskinan sangat imbalance, di mana sebagian besar data diklasifikasikan sebagai tidak miskin (label 0), sedangkan label miskin (label 1) jumlahnya jauh lebih sedikit. Hal ini menunjukkan ketidakseimbangan kelas yang perlu diperhatikan saat pemodelan.
 
 Distribusi provinsi juga divisualisasikan:
-![gambar1b](https://github.com/user-attachments/assets/3b9a0b9a-567f-48aa-afd3-9d9764fc58c7)
+![gambar1b](https://github.com/user-attachments/assets/eec97911-baad-456d-8df1-140599f3ff00)
 
 Distribusi data pada kolom provinsi : 
 -   Data dengan sedikit kontribusi ada di provinsi DKI Jakarta
