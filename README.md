@@ -81,7 +81,7 @@ Distribusi data pada kolom provinsi :
 
 ### EDA Multivariate  
 - **Distribusi antar provinsi** menunjukkan variasi signifikan antara proporsi miskin dan tidak miskin. Beberapa wilayah memiliki distribusi seimbang.
-![gambar2a](https://github.com/user-attachments/assets/a5ee2199-bfb8-47e9-98d2-25951a772a77)
+![gambar2a](https://github.com/user-attachments/assets/c7a1b2bf-8fae-40b1-8a98-ca2727d4ea63)
 
 Variasi Pola Kemiskinan Antar Provinsi: Pola distribusi antara kategori "0" dan "1" sangat bervariasi antar provinsi. Ada provinsi di mana jumlah yang tidak miskin jauh lebih banyak dari yang miskin, ada yang perbedaannya tidak terlalu besar, dan bahkan ada beberapa provinsi (meskipun terlihat sedikit) di mana jumlah yang diklasifikasikan sebagai miskin hampir sebanding atau bahkan lebih banyak dari yang tidak miskin.
 Beberapa provinsi terlihat memiliki batang kategori "0" yang jauh lebih tinggi daripada batang kategori "1", mengindikasikan proporsi "kemiskinan" yang relatif rendah. Contoh Provinsi Spesifik:
