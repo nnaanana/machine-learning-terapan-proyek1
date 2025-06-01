@@ -129,14 +129,14 @@ Tiga algoritma utama yang digunakan:
 1. **K-Nearest Neighbour (KNN)**  
    Model pertama yang digunakan yaitu algoritma K-Nearest Neighbour (KNN), yang mengklasifikasikan label dari sebuah data baru berdasarkan label dari K data tetangga terdekatnya dalam ruang fitur. Kedekatan antar data diukur menggunakan jarak, umumnya Euclidean.
 
-  Parameter yang digunakan yaitu :
+    Parameter yang digunakan yaitu :
 
   **n_neighbors** : jumlah tetangga terdekat yang digunakan untuk menentukan kelas prediksi. Dalam proyek ini ditentukan sebanyak 5 tetangga.
 
 2. **Decision Tree**  
    Model kedua yaitu Decision Tree Classifier, algoritma supervised learning yang dapat digunakan untuk tugas klasifikasi maupun regresi. Model ini bekerja dengan membangun struktur pohon di mana tiap node internal merepresentasikan fitur, tiap cabang merepresentasikan aturan keputusan, dan tiap leaf node berisi hasil akhir klasifikasi.
 
-   Parameter yang digunakan yaitu: 
+    Parameter yang digunakan yaitu: 
 
 - **random_state** : digunakan untuk memastikan bahwa proses yang bersifat acak (seperti pemilihan subset data dan pemilihan fitur saat membangun node) akan menghasilkan hasil yang sama setiap kali kode dijalankan. Dalam proyek ini diatur sebanyak 42
 - **max_depth** kedalaman maksimum masing-masing pohon dalam hutan, untuk mencegah overfitting. Dalam proyek ini diatur maksimal 3.
@@ -144,7 +144,7 @@ Tiga algoritma utama yang digunakan:
 3. **Random Forest**  
    Model ketiga adalah Random Forest, sebuah algoritma ensemble learning berbasis Decision Tree. Random Forest membangun banyak pohon keputusan secara acak dan independen, lalu menggabungkan prediksinya melalui voting (untuk klasifikasi) atau rata-rata (untuk regresi). Konsep utamanya, "kerumunan pohon yang lemah bisa menjadi hutan yang kuat."
 
-  Parameter yang digunakan yaitu: 
+    Parameter yang digunakan yaitu: 
 
 - **random_state** : digunakan untuk memastikan bahwa proses yang bersifat acak (seperti pemilihan subset data dan pemilihan fitur saat membangun pohon-pohon) akan menghasilkan hasil yang sama setiap kali kode dijalankan. Dalam proyek ini diatur sebanyak 42
 - **max_depth** : kedalaman maksimum masing-masing pohon dalam hutan, untuk mencegah overfitting. Dalam proyek ini diatur maksimal 3.
