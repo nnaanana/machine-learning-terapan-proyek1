@@ -35,7 +35,9 @@ Oleh karena itu, proyek ini menjadi penting untuk dilakukan sebagai upaya mengin
 ## Data Understanding  
 Data bersumber dari [Kaggle - Klasikasi Kemiskinan](https://www.kaggle.com/datasets/ermila/klasifikasi-kemiskinan), yang mencakup informasi sosial-ekonomi dari berbagai wilayah di Indonesia.  
 - **Jumlah data**: 514 baris  
-- **Fitur**: 7 kolom  
+- **Fitur**: 7 kolom
+- **Missing Value** : 0
+- **Data Terduplikasi** : 0
 
 ![struktur_dataset](https://github.com/user-attachments/assets/3f77135c-3a77-4e29-975a-c70d4dddf15e)
 
@@ -50,12 +52,6 @@ Data bersumber dari [Kaggle - Klasikasi Kemiskinan](https://www.kaggle.com/datas
 
 ### EDA Univariate  
 Distribusi fitur numerik dianalisis untuk mengidentifikasi pola umum. Beberapa temuan:
-
-- Persentase kemiskinan mayoritas berada di bawah 15%, namun ada yang mencapai lebih dari 20%.
-- Pengeluaran per kapita mayoritas antara 8–12 juta rupiah per tahun.
-- IPM terdistribusi normal di kisaran 65–75.
-- Tingkat pengangguran banyak berada di bawah 6%.
-- Kategori target tidak seimbang: label tidak miskin jauh lebih dominan.
 
 ![Gambar1a](https://github.com/user-attachments/assets/6c93dc6e-6e91-436b-8749-827c4b26760e)
 
@@ -112,9 +108,11 @@ Langkah-langkah utama:
 - Mengubah tipe data ke numerik untuk kolom yang kurang tepat tipe datanya.
 - Menghapus outlier dengan IQR method.
 - One-hot encoding untuk provinsi.
+- Menghapus kolom provinsi dan kab/kota
+- Split data: 80% train, 20% test.
 - StandardScaler untuk menyesuaikan skala fitur.
 - SMOTE untuk menyeimbangkan kelas.
-- Split data: 80% train, 20% test.
+
 
 **Alasan:**  
 - Mengganti nama kolom dilakukan untuk memudahkan proses eksplorasi, analisis, dan pemodelan karena nama kolom yang ringkas, konsisten, dan mudah dipanggil dapat mengurangi potensi error saat coding
@@ -129,13 +127,27 @@ Langkah-langkah utama:
 ## Model Development  
 Tiga algoritma utama yang digunakan:
 1. **K-Nearest Neighbour (KNN)**  
-   Sederhana namun sensitif terhadap skala dan noise.
+   Model pertama yang digunakan yaitu algoritma K-Nearest Neighbour (KNN), yang mengklasifikasikan label dari sebuah data baru berdasarkan label dari K data tetangga terdekatnya dalam ruang fitur. Kedekatan antar data diukur menggunakan jarak, umumnya Euclidean.
+
+  Parameter yang digunakan yaitu :
+
+  **n_neighbors** : jumlah tetangga terdekat yang digunakan untuk menentukan kelas prediksi. Dalam proyek ini ditentukan sebanyak 5 tetangga.
 
 2. **Decision Tree**  
-   Mudah dipahami dan interpretatif, dengan pengaturan `max_depth=3`.
+   Model kedua yaitu Decision Tree Classifier, algoritma supervised learning yang dapat digunakan untuk tugas klasifikasi maupun regresi. Model ini bekerja dengan membangun struktur pohon di mana tiap node internal merepresentasikan fitur, tiap cabang merepresentasikan aturan keputusan, dan tiap leaf node berisi hasil akhir klasifikasi.
+
+   Parameter yang digunakan yaitu: 
+
+- **random_state** : digunakan untuk memastikan bahwa proses yang bersifat acak (seperti pemilihan subset data dan pemilihan fitur saat membangun node) akan menghasilkan hasil yang sama setiap kali kode dijalankan. Dalam proyek ini diatur sebanyak 42
+- **max_depth** kedalaman maksimum masing-masing pohon dalam hutan, untuk mencegah overfitting. Dalam proyek ini diatur maksimal 3.
 
 3. **Random Forest**  
-   Akurat dan stabil, tetapi kompleks dan lebih berat secara komputasi.
+   Model ketiga adalah Random Forest, sebuah algoritma ensemble learning berbasis Decision Tree. Random Forest membangun banyak pohon keputusan secara acak dan independen, lalu menggabungkan prediksinya melalui voting (untuk klasifikasi) atau rata-rata (untuk regresi). Konsep utamanya, "kerumunan pohon yang lemah bisa menjadi hutan yang kuat."
+
+  Parameter yang digunakan yaitu: 
+
+- **random_state** : digunakan untuk memastikan bahwa proses yang bersifat acak (seperti pemilihan subset data dan pemilihan fitur saat membangun pohon-pohon) akan menghasilkan hasil yang sama setiap kali kode dijalankan. Dalam proyek ini diatur sebanyak 42
+- **max_depth** : kedalaman maksimum masing-masing pohon dalam hutan, untuk mencegah overfitting. Dalam proyek ini diatur maksimal 3.
 
 ## Evaluation
 
